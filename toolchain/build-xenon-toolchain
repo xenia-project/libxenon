@@ -410,7 +410,7 @@ function check_build-essential
 		read answer >> $LOGFILE 2>&1
 		if [ "$answer" == "y" ]; then
 			echo -e "Please wait while installing build-essential..."
-			sudo apt-get install build-essential >> $LOGFILE 2>&1
+			sudo apt-get -y install build-essential >> $LOGFILE 2>&1
 		fi
 	else
 		echo -e "The build-essential package was detected on your system"
@@ -423,7 +423,7 @@ function check_build-essential
     read answer >> $LOGFILE 2>&1
 		if [ "$answer" == "y" ]; then
 			echo -e "Please wait while installing flex and bison..."
-			sudo apt-get install flex bison >> $LOGFILE 2>&1
+			sudo apt-get -y install flex bison >> $LOGFILE 2>&1
 		fi
   fi;
 	
@@ -434,7 +434,7 @@ function check_build-essential
     read answer >> $LOGFILE 2>&1
 		if [ "$answer" == "y" ]; then
 			echo -e "Please wait while installing gcc-multilib..."
-			sudo apt-get install gcc-multilib >> $LOGFILE 2>&1
+			sudo apt-get -y install gcc-multilib >> $LOGFILE 2>&1
 		fi
   fi;
 }
