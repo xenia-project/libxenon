@@ -18,9 +18,9 @@ BZIP2=bzip2-1.0.6
 FREETYPE=freetype-2.4.9
 
 # build stages
-BUILD_BINUTILS=false
-BUILD_GCC=false
-BUILD_NEWLIB=false
+BUILD_BINUTILS=true
+BUILD_GCC=true
+BUILD_NEWLIB=true
 BUILD_GCC_SECOND=true
 
 # fancy progress bar
