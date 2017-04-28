@@ -92,13 +92,18 @@ function toolchain_install
             echo -e "Extracting binutils..."
             $EXTR $BINUTILS.tar.bz2 | tar xfj - >> $LOGFILE 2>&1 || exit 1
             cat $BINUTILS.diff | patch -p0 >> $LOGFILE 2>&1
+
+            if [ -f $BINUTILS-vmx128.diff ]; then
+              echo -e "Applying vmx128 support..."
+              cat $BINUTILS-vmx128.diff | patch -p0 >> $LOGFILE 2>&1
+            fi;
           fi;
           cd build
           echo -e "Configuring binutils..."
           ../$BINUTILS/configure --target=$TARGET --prefix=$PREFIX  --enable-multilib --disable-nls --disable-werror >> $LOGFILE 2>&1 || exit 1
           echo -e "Building binutils, this could take a while..."
-          make $PARALLEL >> $LOGFILE 2>&1 || exit 1
-          make install >> $LOGFILE 2>&1 || exit 1
+          make $PARALLEL 2>&1 >> $LOGFILE || exit 1
+          make install 2>&1 >> $LOGFILE || exit 1
           cd ..
           rm -rf build/*;
           echo -e "Done"
