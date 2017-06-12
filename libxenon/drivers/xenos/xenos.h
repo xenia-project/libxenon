@@ -43,6 +43,7 @@ extern "C" {
 #define AVIVO_D1SCL_SCALER_TAP_CONTROL 0x6594
 #define DC_LUTA_CONTROL                0x64C0
 #define DC_LUT_RW_INDEX	               0x6488
+#define DC_LUT_PWL_DATA				   0x6490
 #define DC_LUT_RW_MODE                 0x6484
 #define DC_LUT_WRITE_EN_MASK	       0x649C
 #define DC_LUT_AUTOFILL      	       0x64a0
